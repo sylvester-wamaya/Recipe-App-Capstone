@@ -93,4 +93,4 @@ production:
   <<: *default
   database: recipe_app
   username: postgres
-  password: <%= ENV["BLOG_APP_DATABASE_PASSWORD"] %>
+  password: <%= ENV["recipe_app_DATABASE_PASSWORD"] %>
