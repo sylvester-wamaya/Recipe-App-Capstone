@@ -94,3 +94,16 @@ Migrating to CreateRecipeFoods (20230914074710)
   [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(3825065484549094065)[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2023-09-14 21:17:16 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (3.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#index as HTML
+Completed 500 Internal Server Error in 175ms (ActiveRecord: 70.4ms | Allocations: 3809)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedTable: ERROR:  relation "application_records" does not exist
+LINE 9:  WHERE a.attrelid = '"application_records"'::regclass
+                            ^
+):
+  
+app/controllers/recipes_controller.rb:6:in `index'
