@@ -29,3 +29,68 @@ Migrating to AddRoleToUsers (20230913124221)
   [1m[36mActiveRecord::InternalMetadata Load (2.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(6346737304502236215)[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2023-09-14 11:42:33 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (4.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#index as HTML
+Completed 500 Internal Server Error in 716ms (ActiveRecord: 228.8ms | Allocations: 6196)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedTable: ERROR:  relation "application_records" does not exist
+LINE 9:  WHERE a.attrelid = '"application_records"'::regclass
+                            ^
+):
+  
+app/controllers/recipes_controller.rb:6:in `index'
+Started GET "/" for ::1 at 2023-09-14 11:42:46 +0300
+Processing by RecipesController#index as HTML
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 1.2ms | Allocations: 991)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedTable: ERROR:  relation "application_records" does not exist
+LINE 9:  WHERE a.attrelid = '"application_records"'::regclass
+                            ^
+):
+  
+app/controllers/recipes_controller.rb:6:in `index'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3825065484549094065)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (24.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(3825065484549094065)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2023-09-14 11:47:09 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#index as HTML
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 3.2ms | Allocations: 4567)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedTable: ERROR:  relation "application_records" does not exist
+LINE 9:  WHERE a.attrelid = '"application_records"'::regclass
+                            ^
+):
+  
+app/controllers/recipes_controller.rb:6:in `index'
+Started GET "/" for ::1 at 2023-09-14 11:50:23 +0300
+Processing by FoodsController#index as HTML
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 2.2ms | Allocations: 1831)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedTable: ERROR:  relation "application_records" does not exist
+LINE 9:  WHERE a.attrelid = '"application_records"'::regclass
+                            ^
+):
+  
+app/controllers/foods_controller.rb:6:in `index'
+Started GET "/" for ::1 at 2023-09-14 11:54:11 +0300
+Processing by RecipesController#create as HTML
+Completed 400 Bad Request in 15ms (ActiveRecord: 0.0ms | Allocations: 1447)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: recipe):
+  
+app/controllers/recipes_controller.rb:68:in `recipe_params'
+app/controllers/recipes_controller.rb:22:in `create'
