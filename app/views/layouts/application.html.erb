@@ -11,7 +11,9 @@
   </head>
 
   <body>
-  <%=render ="layouts/alert"%>
+ 
+  <%=notice if notice%>
+  <%=alert if alert%>
     <%= yield %>
   </body>
 </html>
