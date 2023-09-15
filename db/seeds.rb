@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+puts "Start seeding"
+
+User.create(id: 1, name: "Sylvester", email: 'sylvester@gmail.com',encrypted_password: '1234')
+Food.create(id:1, name: "Pizza", measurement_unit: 2, price: 1000, quantity: 5, user_id: 1)
+puts "End seeding"
