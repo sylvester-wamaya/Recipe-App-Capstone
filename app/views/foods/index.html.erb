@@ -4,11 +4,11 @@
 
 <div id="foods">
   <% @foods.each do |food| %>
-    <%= render food %>
-    <p>
-      <%= link_to "Show this food", food %>
-    </p>
+    <a href="/users/<%=@user.id%>/foods/<%=food.id%>"><%= render food %></a>
+
   <% end %>
 </div>
 
 <%= link_to "New food", new_food_path %>
+<br/>
+<button type="button"><%= link_to "Back to User", @user %></button>
