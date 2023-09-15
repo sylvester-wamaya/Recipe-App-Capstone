@@ -10,15 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_14_074710) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_14_232537) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "foods", force: :cascade do |t|
     t.string "name"
-    t.float "measurement_unit"
-    t.float "price"
-    t.float "quantity"
+    t.string "measurent_unit"
+    t.decimal "price"
+    t.integer "quantity"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -43,6 +44,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_14_074710) do
   end
 
   create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -52,9 +56,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_14_074710) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string "role", default: "user"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
@@ -62,4 +63,3 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_14_074710) do
   end
 
 end
-
