@@ -1,9 +1,12 @@
-<h1>New food</h1>
+<div class="container">
+  <h1 class="title">New Food</h1>
 
-<%= render "form", food: @food %>
+  <%= render "form", food: @food %>
 
-<br>
+  <br>
 
-<div>
-  <%= link_to "Back to foods", foods_path %>
+  <div>
+    
+    <button type="button" class="back-btn btn"><%= link_to "Back to foods", foods_path %></button>
+  </div>
 </div>
