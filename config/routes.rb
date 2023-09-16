@@ -5,9 +5,11 @@ Rails.application.routes.draw do
   resources :foods
   resources :recipe_foods
   resources :users
-  resources :public_recipes
-  get "/general_shopping_list", to: "recipes#generate_shopping", as: :generate_shopping
-  # Defines the root path route ("/")
-   root "recipes#index"
-   get '/unauthorized', to: 'unauthorized#index'
+
+    resources :recipes
+    resources :foods
+   root "foods#index"
+   get '/general_shopping_list', to: 'foods#general_shopping_list'
+
+
 end

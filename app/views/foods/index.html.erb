@@ -1,25 +1,33 @@
-<button type="button" class="add-btn add-food-btn btn"><%= link_to "Add Food", new_food_path %></button>
 
-<div class="container">
-  <h1 class='title'>Foods List</h1>
+<%=stylesheet_link_tag('food')%>
+<section>
+<button type="button" class='new-food'><%= link_to "New food", new_food_path  %></button>
 
-  <div id="foods_table">
-    <table class='table-foods'>
-      <tr>
-        <th><%= link_to "Name", :sort => "name" %></th>
-        <br>
-        <td><strong>Measurement Unit</strong></td>
-        <br>
-        <td><strong>Price</strong></td>
-        <br>
-        <br>
-        <td><strong>Actions</strong>
-        <br>
-      </tr>  
-      
-    <% @foods.each do |food| %>
-      <%= render food %>
-    <% end %>
-    </table>
-  </div>
+<p style="color: green"><%= notice %></p>
+
+
+
+<div id="foods">
+ <table>
+ <thead>
+<tr>
+<th>Food</th>
+<th>Measurement Unit</th>
+<th>Unit price</th>
+<th>Actions</th>
+</tr>
+</thead>
+<tbody>
+  <% @foods.each do |food| %>
+    <a href="/foods/<%=food.id%>"><%= render food %></a>
+    
+  <% end %>
+   <tbody>
+ </table>
+
 </div>
+
+
+<button type="button" class="back-button"><%= link_to "Back to User", current_user %></button>
+</section>
+
