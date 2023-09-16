@@ -1,5 +1,6 @@
 <div id="<%= dom_id food %>">
 
+
 <tr>
 <td><%= food.name %></td>
 <td><%= food.measurement_unit %></td>
@@ -10,4 +11,8 @@
 </tr>
 
 
+    <td>
+      <%= button_to "delete", food, method: :delete %>
+    </td>
+  <tr>
 </div>

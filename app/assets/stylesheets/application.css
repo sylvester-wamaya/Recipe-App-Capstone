@@ -1,3 +1,4 @@
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -32,3 +33,18 @@
   th {
     background-color: #b0adad;
   }
+
+.container {
+  margin-left: 10%;
+}
+
+#recipe {
+  display: flex;
+  flex-direction: row;
+}
+
+.container-descrip {
+  margin-left: 40px;
+  margin-top: 30px;
+}
+
