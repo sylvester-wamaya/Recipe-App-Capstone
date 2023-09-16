@@ -1,0 +1,30 @@
+table {
+    border-collapse: collapse;
+    width: 70%;
+    margin-bottom: 2rem;
+
+  }
+  
+  td, th {
+    border: 2px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+  th {
+    background-color: #b0adad;
+  }
+  section{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 4rem;
+  }
+  .new-food, .back-button{
+    align-self: end;
+  }
+  .back-button{
+    display: inline-block;
+  }
