@@ -3,7 +3,6 @@ class FoodsController < ApplicationController
 
   # GET /foods or /foods.json
   def index
-
     @foods = current_user.foods
   end
 
@@ -25,16 +24,15 @@ class FoodsController < ApplicationController
   def create
     @food = current_user.foods.new(food_params)
 
-   
-      if @food.save
-         redirect_to foods_url(current_user), notice: 'Food was successfully created.' 
-       
-      else
-         render :new, status: :unprocessable_entity 
-       
-      end
+    if @food.save
+      redirect_to foods_url(current_user), notice: 'Food was successfully created.'
+
+    else
+      render :new, status: :unprocessable_entity
+
     end
- 
+  end
+
   # PATCH/PUT /foods/1 or /foods/1.json
   def update
     respond_to do |format|
@@ -57,9 +55,6 @@ class FoodsController < ApplicationController
       format.json { head :no_content }
     end
   end
-
- 
-
 
   private
 
