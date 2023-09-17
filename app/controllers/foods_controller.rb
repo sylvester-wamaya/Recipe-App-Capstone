@@ -4,9 +4,7 @@ class FoodsController < ApplicationController
 
   # GET /foods or /foods.json
   def index
-
     @foods = current_user.foods
-
   end
 
   # GET /foods/new
@@ -23,13 +21,11 @@ class FoodsController < ApplicationController
     @food = Food.new(food_params)
     @food.user = @user
 
-
     if @food.save
       redirect_to foods_url(current_user), notice: 'Food was successfully created.'
 
     else
       render :new, status: :unprocessable_entity
-
 
     end
   end

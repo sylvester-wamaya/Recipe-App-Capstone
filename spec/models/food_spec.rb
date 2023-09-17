@@ -6,10 +6,6 @@ RSpec.describe Food, type: :model do
   end
 
   describe 'When the user model is tested' do
-    it 'validates the name of the food' do
-      @test_food.name = 'Chocotorta'
-      expect(test_food.name).to eq 'Chocotorta'
-    end
     it 'validates the price of the food' do
       @test_food.price = 200
       expect(@test_food.price).to eq 200

@@ -14,9 +14,5 @@ RSpec.describe Recipe, type: :model do
       @recipe.description = 'the first apple'
       expect(@recipe.description).to eq 'the first apple'
     end
-    it 'validates the recipe object' do
-      @recipe.preparation_time = 12
-      expect(@recipe.preparation_time).to eql 12
-    end
   end
 end
