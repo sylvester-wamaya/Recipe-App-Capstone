@@ -25,7 +25,6 @@
         <td><%= recipe_food.quantity %> <%= recipe_food.food.measurement_unit %></td>
         <td>$ <%= recipe_food.quantity * recipe_food.food.price %></td>
         <td class="recipe-food-actions">
-          <%= link_to 'Modify', edit_recipe_food_path(recipe_food), class: "modify-button" if can? :edit, recipe_food %> 
           <%= button_to 'Remove', recipe_food_path(recipe_food), class: "btn-delete", method: :delete, data: { confirm: 'Are you sure?' } if can? :destroy, recipe_food %>
         </td>
       </tr>
