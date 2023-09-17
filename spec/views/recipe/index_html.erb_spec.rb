@@ -20,7 +20,7 @@ RSpec.describe 'recipe/index', type: :system do
     end
 
     before do
-      sign_in user
+      login_as(FactoryBot.create(:user))
       visit recipes_path
     end
 
