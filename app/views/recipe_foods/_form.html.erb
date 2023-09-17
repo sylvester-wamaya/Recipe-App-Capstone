@@ -11,32 +11,27 @@
         </ul>
       </div>
     <% end %>
+     <div class="field">
+    <%= form.label :food_id %>
+    <% if @available_foods.present? %>
+     <%= form.collection_select(:food_id, @available_foods, :id, :name, {}, {}) %>
+    <% else %>
+      <p>No foods available. Please add food first.</p>
+      <%= link_to "Add New Food", new_food_path %>
+    <% end %>
+  </div>
 
     <div class="field">
       <%= form.label :quantity, style: "display: block" %>
       <%= form.text_field :quantity %>
     </div>
+   
+     <div class="field">
+    <%= form.label :recipe_id %>
+    <%= form.collection_select(:recipe_id, [@recipe], :id, :name, disabled: true) %>
+  </div>
+ 
 
-    <div class="field">
-    <%arr = []%>
-    <%dropdown_recipes.each do |recipe|%>
-      
-      <%arr<<[recipe.name, recipe.id] %>
-    <%end%>
-    <h2>Recipe</h2>
-    <%= form.select :recipe_id, arr %>
-
-    </div>
-
-    <div class="field">
-    <h2>Food</h2>
-    <%arr = []%>
-    <%dropdown_foods.each do |food|%>
-      
-      <%arr<<[food.name, food.id]%>
-    <%end%>
-      <%= form.select :food_id, arr %>
-    </div>
 
 
     <div>

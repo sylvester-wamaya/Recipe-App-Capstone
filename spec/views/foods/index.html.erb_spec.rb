@@ -32,7 +32,7 @@ RSpec.describe 'food/index', type: :system do
     end
 
     it 'Check correct url' do
-      expect(page).to have_link('Add food', href: new_food_path)
+      expect(page).to have_link('New food', href: new_food_path)
     end
   end
 end
